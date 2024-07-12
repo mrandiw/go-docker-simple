@@ -19,6 +19,7 @@ func main() {
 	e.GET("/", Hello)
 	e.GET("/get-student", GetStudent)
 	e.GET("/get-grade", GetGrade)
+	e.GET("/get-teacher", GetTeacher)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8080"))
@@ -35,4 +36,8 @@ func GetStudent(c echo.Context) error {
 
 func GetGrade(c echo.Context) error {
 	return c.String(http.StatusOK, "Test API Get Grade.")
+}
+
+func GetTeacher(c echo.Context) error {
+	return c.String(http.StatusOK, "Test API Get Teacher.")
 }
